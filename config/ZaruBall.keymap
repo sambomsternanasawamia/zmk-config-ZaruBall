@@ -12,7 +12,7 @@
 #define RAISE 2
 #define ADJUST 3
 #define MOUSE 4
-#define SCROLL 1
+#define SCROLL 4
 
 // スクロール量の設定
 
