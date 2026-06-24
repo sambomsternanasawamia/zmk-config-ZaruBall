@@ -136,7 +136,7 @@
 &kp LCTRL          &kp C_MUTE  &kp LWIN  &kp LEFT_ALT  &lt 2 SPACE  &mkp MB1          &mkp MB2       &lt 2 ENTER                               &kp UNDER
             >;
 
-            sensor-bindings = <&scroll_down_up>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOLUME_DOWN>;
         };
 
         BASE_Windows {
