@@ -65,14 +65,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LALT LANG2>, <&mo 0>, <&mo 0>;
+            bindings = <&mt LALT LANG2>, <&mo 1>, <&mo 1>;
         };
 
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt RCTL LANG1>, <&mo 0>, <&mo 0>;
+            bindings = <&mt RCTL LANG1>, <&mo 1>, <&mo 1>;
         };
     };
 };
@@ -85,7 +85,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 1 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_layer_0";
         };
 
@@ -101,7 +101,7 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&sl 0>;
+                <&sl 1>;
 
             label = "MKP_EXIT_AML";
         };
@@ -126,40 +126,40 @@
     keymap {
         compatible = "zmk,keymap";
 
-        BASE_Windows {
-            display-name = "BASE";
-            sensor-bindings = <&scroll_down_up>;
-            bindings = <
-&kp ESC    &kp N1  &kp N2      &kp N3    &kp N4        &kp N5                         &kp NUMBER_6   &kp N7     &kp N8   &kp N9     &kp N0   &kp MINUS
-&kp TAB    &kp Q   &kp W       &kp E     &kp R         &kp T                          &kp Y          &kp U      &kp I    &kp O      &kp P    &kp LEFT_BRACKET
-&kp CAPS   &kp A   &kp S       &kp D     &kp F         &kp G        &kp DELETE        &kp BACKSPACE  &kp H      &lt 4 J  &kp K      &kp L    &kp SEMI          &kp RIGHT_BRACKET
-&kp LSHFT  &kp Z   &kp X       &kp C     &kp V         &kp B        &kp INT_MUHENKAN  &kp INT2       &kp N      &kp M    &kp COMMA  &kp DOT  &kp FSLH          &kp BACKSLASH
-&kp LCTRL          &kp C_MUTE  &kp LWIN  &kp LEFT_ALT  &lt 2 SPACE  &mkp MB1          &mkp MB2       &kp ENTER                               &kp UNDER
-            >;
-        };
-
         BASE_Mac {
             display-name = "BASE";
             bindings = <
-&kp ESC           &kp N1  &kp N2      &kp N3    &kp N4        &kp N5                         &kp NUMBER_6   &kp N7     &kp N8   &kp N9     &kp N0   &kp MINUS
-&kp TAB           &kp Q   &kp W       &kp E     &kp R         &kp T                          &kp Y          &kp U      &kp I    &kp O      &kp P    &kp LEFT_BRACKET
-&kp CAPS          &kp A   &kp S       &kp D     &kp F         &kp G        &kp DELETE        &kp BACKSPACE  &kp H      &lt 4 J  &kp K      &kp L    &kp SEMI          &kp RIGHT_BRACKET
-&kp LSHFT         &kp Z   &kp X       &kp C     &kp V         &kp B        &kp INT_MUHENKAN  &kp INT2       &kp N      &kp M    &kp COMMA  &kp DOT  &kp FSLH          &kp BACKSLASH
-&kp LEFT_COMMAND          &kp C_MUTE  &kp LWIN  &kp LEFT_ALT  &lt 2 SPACE  &mkp MB1          &mkp MB2       &kp ENTER                               &kp UNDER
+&kp ESC    &kp N1  &kp N2      &kp N3    &kp N4        &kp N5                         &kp NUMBER_6   &kp N7       &kp N8   &kp N9     &kp N0   &kp MINUS
+&kp TAB    &kp Q   &kp W       &kp E     &kp R         &kp T                          &kp Y          &kp U        &kp I    &kp O      &kp P    &kp LEFT_BRACKET
+&kp CAPS   &kp A   &kp S       &kp D     &kp F         &kp G        &kp DELETE        &kp BACKSPACE  &kp H        &lt 4 J  &kp K      &kp L    &kp SEMI          &kp RIGHT_BRACKET
+&kp LSHFT  &kp Z   &kp X       &kp C     &kp V         &kp B        &kp INT_MUHENKAN  &kp INT2       &kp N        &kp M    &kp COMMA  &kp DOT  &kp FSLH          &kp BACKSLASH
+&kp LCTRL          &kp C_MUTE  &kp LWIN  &kp LEFT_ALT  &lt 2 SPACE  &mkp MB1          &mkp MB2       &lt 2 ENTER                               &kp UNDER
             >;
 
             sensor-bindings = <&scroll_down_up>;
+        };
+
+        BASE_Windows {
+            display-name = "BASE";
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
+            bindings = <
+&kp ESC    &kp N1  &kp N2      &kp N3    &kp N4        &kp N5                         &kp NUMBER_6   &kp N7       &kp N8   &kp N9     &kp N0   &kp MINUS
+&kp TAB    &kp Q   &kp W       &kp E     &kp R         &kp T                          &kp Y          &kp U        &kp I    &kp O      &kp P    &kp LEFT_BRACKET
+&kp CAPS   &kp A   &kp S       &kp D     &kp F         &kp G        &kp DELETE        &kp BACKSPACE  &kp H        &lt 4 J  &kp K      &kp L    &kp SEMI          &kp RIGHT_BRACKET
+&kp LSHFT  &kp Z   &kp X       &kp C     &kp V         &kp B        &kp INT_MUHENKAN  &kp INT2       &kp N        &kp M    &kp COMMA  &kp DOT  &kp FSLH          &kp BACKSLASH
+&kp LCTRL          &kp C_MUTE  &kp LWIN  &kp LEFT_ALT  &lt 2 SPACE  &mkp MB1          &mkp MB2       &lt 2 ENTER                               &kp UNDER
+            >;
         };
 
         lower_layer {
             display-name = "Lower";
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                              &kp F7         &kp F8  &kp F9          &kp F10         &kp F11        &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans                              &trans         &trans  &trans          &trans          &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(LC(LA(C)))         &trans         &trans  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LC(LS(GREATER_THAN))  &kp LS(LC(C))  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &trans   &trans
-&trans          &trans  &trans  &trans  &mkp MB4  &mkp MB5                  &trans         &trans                                                 &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                              &kp F7         &kp F8    &kp F9          &kp F10         &kp F11        &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans         &trans    &trans          &trans          &trans         &kp APOS
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(LC(LA(C)))         &trans         &trans    &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &trans    &kp COLON
+&trans  &trans  &trans  &trans  &trans  &mkp MB4  &kp LC(LS(GREATER_THAN))  &kp LS(LC(C))  &mkp MB5  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &trans    &trans
+&trans          &trans  &trans  &trans  &trans    &trans                    &trans         &trans                                                   &trans
             >;
         };
 
