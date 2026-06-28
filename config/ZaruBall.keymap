@@ -123,6 +123,15 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        adjust {
+            bindings = <&lt 3 HOME>;
+            key-positions = <44 45>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
